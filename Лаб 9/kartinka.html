@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <style>
+        #text1 {
+            position: absolute;
+            font-size: large;
+        }
+        
+        #img1 {
+            position: absolute;
+            padding-top: 50px;
+            width: 20%;
+            height: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id='text1'>Задание 1</textarea>
+    <img id='img1' src='img1.jpg' />
+    <script type="text/javascript">
+        function fun1() {
+            let TextName = document.getElementById('text1');
+            TextName.onmousedown = function(event) {
+                let shiftX = event.clientX - TextName.getBoundingClientRect().left;
+                //возвращает размер элемента и его позицию относительно viewport
+                let shiftY = event.clientY - TextName.getBoundingClientRect().top;
+                moveAt(event.pageX, event.pageY);
+                //возвращает значение равное горизонтальной координате
+                function moveAt(pageX, pageY) {
+                    TextName.style.left = pageX - shiftX + 'px';
+                    TextName.style.top = pageY - shiftY + 'px';
+                }
+
+                function onmousemove(event) {
+                    moveAt(event.pageX, event.pageY);
+                }
+                document.addEventListener('mousemove', onmousemove);
+                TextName.onmouseup = function() {
+                    document.removeEventListener('mousemove', onmousemove);
+                    TextName.onmouseup = null;
+                }
+                TextName.ondragstart = function() {
+                    return false;
+                }
+            }
+        }
+        fun1();
+
+        function fun2() {
+            let ImgName = document.getElementById('img1');
+            ImgName.onmousedown = function(event) {
+                let shiftX = event.clientX - ImgName.getBoundingClientRect().left;
+                let shiftY = event.clientY - ImgName.getBoundingClientRect().top;
+                moveAt(event.pageX, event.pageY);
+
+                function moveAt(pageX, pageY) {
+                    ImgName.style.left = pageX - shiftX + 'px';
+                    ImgName.style.top = pageY - shiftY + 'px';
+                }
+
+                function onmousemove(event) {
+                    moveAt(event.pageX, event.pageY);
+                }
+                document.addEventListener('mousemove', onmousemove);
+                ImgName.onmouseup = function() {
+                    document.removeEventListener('mousemove', onmousemove);
+                    ImgName.onmouseup = null;
+                }
+                ImgName.ondragstart = function() {
+                    return false;
+                }
+            }
+        }
+        fun2();
+    </script>
+</body>
+
+</html>

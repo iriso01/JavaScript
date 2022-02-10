@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лаб 8</title>
+    <style>
+        img {
+            width: 300px;
+        }
+        
+        #form1 {
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p"><span id="form">Дорогие</span> друзья, повышение уровня гражданского сознания представляет собой интересный эксперимент проверки направлений прогрессивного развития! Разнообразный и богатый опыт консультация с профессионалами из IT обеспечивает широкому
+        <span id="form1">кругу</span> специалистов участие в формировании соответствующих условий активизации. Соображения высшего порядка, а также рамки и место обучения кадров требует определения и уточнения дальнейших направлений развитая...
+    </p>
+    <img src="img1.jpg" id="izob">
+    <img src="img2.jpg" id="izob2">
+    <script>
+        function fun1() {
+            let text = document.getElementById("form");
+            text.onmouseover = function() {
+                text.style.color = "red";
+            }
+            text.onmouseout = function() {
+                text.style.color = "black";
+            }
+
+            text.onclick = function() {
+                text.style.fontSize = "20px";
+            }
+        }
+        fun1();
+
+        function fun2() {
+            let izob = new Array("img1.jpg", "img2.jpg");
+            let izob1 = document.getElementById("izob");
+            izob1.onclick = function() {
+                izob1.src = izob[1];
+            }
+        }
+        fun2();
+
+        function fun3() {
+            let slovo = document.getElementById("form1");
+            slovo.onclick = function() {
+                slovo.innerHTML = "<img src='img2.jpg'/>";
+            }
+        }
+        fun3();
+
+        function fun4() {
+            let ris = document.getElementById("izob2");
+            ris.onmouseover = function() {
+                ris.style.width = "600px";
+            }
+            ris.onmouseout = function() {
+                ris.style.width = "300px";
+            }
+        }
+        fun4();
+
+        function fun5() {
+            let text3 = document.getElementById("p");
+            text3.ondblclick = function() {
+                text3.style.border = "solid 3px blue";
+            }
+        }
+        fun5();
+    </script>
+</body>
+
+</html>

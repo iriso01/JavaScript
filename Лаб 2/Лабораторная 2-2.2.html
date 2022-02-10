@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица умножения</title>
+</head>
+
+<body>
+    <table width="300px">
+        <script type="text/javascript">
+            //  Вводим числа a-строка,b-столбец
+            let a = prompt("Введите число");
+            let b = prompt("Введите число");
+            document.write("<tr><td bgcolor='lightgreen'></td>");
+            //  Создание горизонтального ряда 
+            for (i = 1; i <= a; i++)
+                document.write("<td bgcolor='lightgreen'>" + i + " </td>");
+            document.write("</tr>");
+
+            //  Создание вертикального ряда
+            for (i = 1; i <= b; i++) {
+                document.write("<tr><td bgcolor='lightgreen'>" + i + " </td>");
+                // Создание таблицы
+                for (j = 1; j <= a; j++) {
+                    document.write("<td style='text-align:center;'>" + (i * j) + " </td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+</body>
+
+</html>

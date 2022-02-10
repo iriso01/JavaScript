@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Окружность</title>
+</head>
+
+<body>
+    <table>
+        <script type="text/javascript">
+            let nach = 1;
+            let konec = 9;
+            let plosh = 1;
+            let dlin = 1;
+            document.write("<table>");
+            document.write("<tr><td bgcolor='#FFFF66'>Радиус круга</td>");
+            document.write("<td bgcolor='#FFFF66'>Площадь круга</td>");
+            document.write("<td bgcolor='#FFFF66'>Длина окружности</td>");
+            document.write("</tr>");
+            do {
+                document.write("<tr><td  bgcolor='#CCCCFF' style='text-align:center;'>" + nach.toFixed(1) + "</td>");
+                document.write("<td bgcolor='#CCCCFF' style='text-align:center;'>" + plosh + "</td>");
+                document.write("<td bgcolor='#CCCCFF' style='text-align:center;'>" + dlin + "</td>");
+                document.write("</tr>");
+                nach += 0.3;
+                plosh = Math.round(Math.PI * Math.pow(nach, 2));
+                dlin = Math.round(Math.PI * 2 * nach);
+            }
+            while (nach <= konec);
+            document.write("</table>");
+        </script>
+</body>
+</table>
+
+</html>

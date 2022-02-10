@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Документ</title>
+</head>
+
+<body>
+    <table>
+        <script type="text/javascript">
+            "use strict";
+            let a = new Number('3');
+            let b = new Number('4.7');
+
+            document.write("<tr><td bgcolor='#AAFFEE'>Число</td>");
+            document.write("<td bgcolor='#AAFFEE'>Метод</td>");
+            document.write("<td bgcolor='#AAFFEE'>Результат</td>");
+            document.write("<td bgcolor='#AAFFEE'>Описание метода</td>");
+            document.write("</tr>");
+
+            document.write("<tr><td>" + a + "</td>");
+            document.write("<td>toExponential(2)</td>");
+            document.write("<td>" + a.toExponential(2) + "</td>");
+            document.write("<td>Представление числа a в экспоненциальной форме</td></tr>");
+
+            document.write("<tr><td>" + b + "</td>");
+            document.write("<td>toExponential(2)</td>");
+            document.write("<td>" + b.toExponential(2) + "</td>");
+            document.write("<td>Представление числа b в экспоненциальной форме</td></tr>");
+
+            document.write("<tr><td>" + a + "</td>");
+            document.write("<td>toFixed(2)</td>");
+            document.write("<td>" + a.toFixed(2) + "</td>");
+            document.write("<td>Представление числа a в форме с фиксированным количеством цифр после точки</td></tr>");
+
+            document.write("<tr><td>" + b + "</td>");
+            document.write("<td>toFixed(2)</td>");
+            document.write("<td>" + b.toFixed(2) + "</td>");
+            document.write("<td>Представление числа b в форме с фиксированным количеством цифр после точки</td></tr>");
+
+            document.write("<tr><td>" + a + "</td>");
+            document.write("<td>toPrecision(2)</td>");
+            document.write("<td>" + a.toPrecision(2) + "</td>");
+            document.write("<td>Представление числа a с заданным общим количеством значащих цифр</td></tr>");
+
+            document.write("<tr><td>" + b + "</td>");
+            document.write("<td>toPrecision(2)</td>");
+            document.write("<td>" + b.toPrecision(2) + "</td>");
+            document.write("<td>Представление числа b с заданным общим количеством значащих цифр</td></tr>");
+
+            document.write("<tr><td>" + a + "</td>");
+            document.write("<td>toString(2)</td>");
+            document.write("<td>" + a.toString(2) + "</td>");
+            document.write("<td>Возвращение строкового представления числа a в системе счисления с указанным основанием</td></tr>");
+
+            document.write("<tr><td>" + b + "</td>");
+            document.write("<td>toString(2)</td>");
+            document.write("<td>" + b.toString(2) + "</td>");
+            document.write("<td>Возвращение строкового представления числа b в системе счисления с указанным основанием</td></tr>");
+        </script>
+</body>
+</table>
+
+</html>

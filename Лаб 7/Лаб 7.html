@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лаб 7</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <form name="anketa">
+        <fieldset>
+            <textarea>Факультет информационных технологий</textarea>
+            <p><input type="text" value="Фамилия" name="lastname"><br>
+                <input type="text" value="Имя" name="name"><br>
+            </p>
+            <p>Специальность:
+                <select>
+                <option>ПОИТ</option>
+                <option>ИСиТ</option>
+                <option>ПОИМБС</option>
+                <option>ДЭВИ</option>
+            </select>
+            </p>
+            <p>Курс<br>
+                <input type="radio" value="1" name="kurs"> 1
+                <input type="radio" value="2" name="kurs"> 2
+                <input type="radio" value="3" name="kurs"> 3
+                <input type="radio" value="4" name="kurs">4</p>
+            <p>
+                Предметы<br>
+                <input type="checkbox" name="pred"> ОИТ
+                <input type="checkbox" name="pred">ОАП
+                <input type="checkbox" name="pred">История
+                <input type="checkbox" name="pred">Математика
+                <input type="checkbox" name="pred">Физика </p>
+            <p><input type="submit" value="submit">
+                <input type="reset" value="reset"></p>
+            <p><input type="button" value="Напечатать" onclick="fun1()"></p>
+        </fieldset>
+    </form>
+    <script>
+        function fun1() {
+            let spisok = document.getElementsByName("pred");
+            let a = [new String, new String, new String, new String, new String];
+            if (spisok[0].checked) a[0] = ("<li> ОИТ");
+            if (spisok[1].checked) a[1] = ("<li> ОАП");
+            if (spisok[2].checked) a[2] = ("<li> История");
+            if (spisok[3].checked) a[3] = ("<li> Математика");
+            if (spisok[4].checked) a[4] = ("<li> Физика");
+            document.write("Студент " + document.anketa.lastname.value + " специальность " + document.anketa.elements[4].value + " курс " + document.anketa.kurs.value + " должен сдавать следущие предметы: " + "<br><ul>" + a[0] + a[1] + a[2] + a[3] + a[4] + "</ul>");
+
+        }
+    </script>
+</body>
+
+</html>

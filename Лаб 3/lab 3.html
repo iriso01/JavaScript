@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type='text/javascript'>
+        'use strict';
+
+        function fun1() {
+            let a = 6 * Math.pow(Math.PI, 2) + 3 * Math.pow(Math.E, 8);
+            let a1 = 2 * Math.cos(4) + Math.cos(12) + 8 * Math.pow(Math.E, 3);
+            let a2 = 3 * Math.sin(9) + Math.log(5) + Math.sqrt(3);
+            let a3 = 2 * Math.tan(5) + 6 * Math.PI + Math.sqrt(12);
+            let array = [a, a1, a2, a3];
+            let min = Math.min(...array), //Использование оператора spread
+                minNum;
+            let max = Math.max(...array),
+                maxNum;
+            for (let i = 0; i < array.length; i++) {
+                if (min == array[i]) min = array[i], minNum = i;
+                if (max == array[i]) max = array[i], maxNum = i;
+            }
+            document.write('Максимальное число из массива = ', max, ' и находиться под номером ', maxNum, "<br>");
+            document.write('Минимальное число из массива = ', min, ' и находиться под номером ', minNum, "<br>");
+        }
+
+        function fun2() {
+            let array = ['pow', 'pop', 'push', 'shift', 'round', 'floor', 'slice', 'sort'];
+            let meth = new Array,
+                arr = new Array;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] == 'pow') meth.push(array[i]);
+                if (array[i] == 'pop') arr.push(array[i]);
+                if (array[i] == 'push') arr.push(array[i]);
+                if (array[i] == 'shift') arr.push(array[i]);
+                if (array[i] == 'round') meth.push(array[i]);
+                if (array[i] == 'floor') meth.push(array[i]);
+                if (array[i] == 'slice') arr.push(array[i]);
+                if (array[i] == 'sort') arr.push(array[i]);
+            }
+            arr.push('splice');
+            meth.unshift('min');
+            document.write('Первоначальный массив: ')
+            for (let i = 0; i < array.length; i++) {
+                document.write(' ', array[i]);
+            }
+            document.write('<br>', 'Длина массива - ', array.length, '<br>');
+            document.write('Методы объекта Math: ');
+            for (let i = 0; i < meth.length; i++) {
+                document.write(' ', meth[i]);
+            }
+            document.write('<br>', 'Длина массива - ', meth.length, '<br>');
+            document.write('Методы массива: ')
+            for (let i = 0; i < arr.length; i++) {
+                document.write(' ', arr[i]);
+            }
+            document.write('<br>', 'Длина массива - ', arr.length, '<br>');
+        }
+
+        function fun3() {
+            let stroka = 'Кривецкая Ирина Николаевна';
+            document.write(stroka, '<br>', ' ', 'Длина строки: ', stroka.length, '<br>');
+            document.write('Верхний регистр: ', stroka.toUpperCase(), '<br>');
+            document.write('Нижний  регистр: ', stroka.toLowerCase(), '<br>');
+            document.write(stroka.concat(stroka.toUpperCase(), stroka.toLowerCase()), '<br>');
+            stroka = stroka.replace('Кривецкая ', 'К');
+            stroka = stroka.replace('Ирина ', 'И');
+            stroka = stroka.replace('Николаевна', 'Н');
+            document.write(stroka);
+
+        }
+
+        function fun4() {
+            let day = new Date();
+            document.write('<table  border=\'1\'>');
+            document.write('<tr><td>' + 'Год' + '</td>');
+            document.write('<td>' + day.getFullYear() + '</td></tr>');
+            document.write('<tr><td>' + 'Месяц' + '</td>');
+            document.write('<td>' + day.getMonth() + '</td></tr>');
+            document.write('<tr><td>' + 'День' + '</td>');
+            document.write('<td>' + day.getDay() + '</td></tr>');
+            document.write('<tr><td>' + 'Час' + '</td>');
+            document.write('<td>' + day.getHours() + '</td></tr>');
+            document.write('<tr><td>' + 'Минуты' + '</td>');
+            document.write('<td>' + day.getMinutes() + '</td></tr>');
+            document.write('<tr><td>' + 'Секунды' + '</td>');
+            document.write('<td>' + day.getSeconds() + '</td></tr>');
+
+        }
+    </script>
+    <input type='button' value='Задание 1' onclick='fun1()'>
+    <input type='button' value='Задание 2' onclick='fun2()'>
+    <input type='button' value='Задание 3' onclick='fun3()'>
+    <input type='button' value='Задание 4' onclick='fun4()'>
+
+</body>
+
+</html>

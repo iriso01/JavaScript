@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" type="text/css" href="lab10.css">
+</head>
+
+<body>
+    <div id="nav">
+        <div class="menu-item">
+            Меню 1
+            <div class="submenu">
+                Подменю
+            </div>
+        </div>
+        <div class="menu-item">
+            Меню 2
+            <div class="submenu">
+                Подменю
+            </div>
+        </div>
+        <div class="menu-item">
+            Меню 3
+            <div class="submenu">
+                Подменю
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('nav').onmouseover = function(event) {
+            // срабатывает при наведении
+            let target = event.target;
+            //ссылка на объект инициатора события
+            if (target.className == 'menu-item') {
+                let s = target.getElementsByClassName('submenu');
+                closeMenu();
+                s[0].style.display = 'block';
+            }
+        }
+        document.onmouseover = function(event) {
+            let target = event.target;
+            console.log(event.target);
+            if (target.className != 'menu-item' && target.className != 'submenu') {
+                closeMenu();
+            }
+        }
+
+        function closeMenu() {
+            let menu = document.getElementById('nav');
+            let subm = document.getElementsByClassName('submenu');
+            for (let i = 0; i < subm.length; i++) {
+                subm[i].style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

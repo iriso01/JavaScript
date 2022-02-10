@@ -1,0 +1,90 @@
+<!DOCTYPEhtml>
+<html>
+    <head>
+        <script>
+            function fun1() 
+            {
+            alert('Вас приветсвует учебный центр'); 
+            a=prompt('Введите ваше имя:','Имя');
+            alert('Добро пожаловать на наши курсы, ' +a);
+            }
+            function fun2()
+            {
+            if (confirm ('Хотите стать Web-дизайнером?'))
+            {alert('Учите стили CSS и JavaScript!');
+            }
+            else  {alert('Упускаете время!');
+            } 
+            } 
+            function fun3() 
+        
+            { 
+              let d=8+12;  
+              alert('Результатом сложения 8 и 12 является '+d);
+              let f='8'+'12';
+              alert('Результатом сложения строк является '+f);
+              let k=8+'12';
+              alert('Результатом сложения числа и строки является '+k);
+              alert('Результатом сложения числа и строки всегда будет строка');
+
+            }
+            function fun4()
+            {
+                let x1=4;
+                let y1=5;
+                let g=x1*120*((11+3)/2)*(y1+25)*35+145;
+                alert('Результатом операции вычислений x*120*((11+3)/2)*(y+25)*35+145  при x=4 y= 5 является '+g);
+                let x2=6;
+                let y2=3;
+                let z=((y2+x2*12)+178*x2-152*y2)/2;    
+                alert('Результатом операции вычислений z=((y+x)/2+178*x-152*y)/2 при x=6 y=3 является '+z);
+                let v=g%z;
+                alert (v);  
+            }
+            function fun5()
+            {
+            m=prompt('Введите число','');
+            if (m!=15 && m%5==0 && m<20 || m>40 )
+            alert('Правильное значение')   
+            else
+            alert('Не правильное значение')
+            }
+            function fun6()
+            {
+            p=prompt('Введите число a','');
+            n=prompt('Введите число b','');   
+            if (p>n)
+            alert('А больше Б');
+            else if (p<n)
+            alert('А меньше Б');   
+            else    
+            alert ('Б равно А');
+            }
+            function fun7()
+            {
+            let d=new Date() ;
+            let w= d.getDay();
+            switch(w)
+            {
+             case 1:day='Понедельник';break;
+             case 2:day='Вторник';break;
+             case 3:day='Среда';break;
+             case 4:day='Четверг';break;
+             case 5:day='Пятница';break;
+             case 6:day='Суббота';break;
+             case 0:day='Воскресенье';break;
+            }
+            alert(day);
+            }
+            </script>
+            </head>
+    <body bgcolor='skyblue'>
+        <input type="button" value="Окно приветствия" onclick="fun1()"/>
+        <input type="button" value="Окно вопроса" onclick="fun2()"/>
+        <input type="button" value="Окно сложения" onclick="fun3()"/>
+        <input type="button" value="Окно вычислений" onclick="fun4()"/>
+        <input type="button" value="Окно сравнения" onclick="fun5()"/>
+        <input type="button" value="Окно сравнения 2" onclick="fun6()"/>
+        <input type="button" value="Дни недели" onclick="fun7()"/>
+    </body>
+</html>

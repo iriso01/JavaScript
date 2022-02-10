@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<meta charset='utf-8' />
+
+<head>
+    <style>
+        #img1 {
+            position: relative;
+            cursor: pointer;
+            height: 20%;
+            width: 20%;
+            transition: all 2s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <img id='img1' src='img1.jpg' />
+    <script type="text/javascript">
+        function fun1() {
+            img1.onclick = function() {
+                let start = Date.now();
+                let time = setInterval(function() {
+                    let timePassedX = Date.now() - start;
+                    let timePassedY = Date.now() - start;
+                    if (timePassedX >= 90) {
+                        clearInterval(time);
+                        return;
+                    }
+                    draw(timePassedX, timePassedY);
+                }, 1);
+
+                function draw(timePassedX, timePassedY) {
+                    img1.style.left = timePassedX + 5 + 'px';
+                    img1.style.top = (5 + timePassedY) * Math.PI + 'px';
+                }
+
+            }
+        }
+        fun1();
+    </script>
+</body>
+
+</html>

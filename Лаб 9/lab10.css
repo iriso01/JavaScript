@@ -1,0 +1,17 @@
+.menu-item {
+    margin: 10px;
+    background-color: rgb(207, 195, 228);
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    color: indigo;
+}
+
+.menu-item .submenu {
+    height: 40px;
+    width: 120;
+    background: rgb(212, 216, 228);
+    position: absolute;
+    cursor: pointer;
+    color: grey;
+}

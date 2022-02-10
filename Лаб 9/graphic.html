@@ -1,0 +1,100 @@
+<html>
+<style>
+    div {
+        position: absolute;
+    }
+</style>
+<form>
+    <input type="button" id="col" value="green" onclick="fun2()">
+    <input type="button" id="col" value="red" onclick="fun3()"><br>
+    <label><input type='radio' name='s' value='1' /> y=x2</label>
+    <label><input type='radio' name='s' value='2' /> y=x3</label>
+    <label><input type='radio' name='s' value='3' /> y=sin(x)</label>
+    <label><input type='radio' name='s' value='4' /> y=cos(x)</label>
+    <br><input type="button" onclick="build()" value="построить"></form>
+<p></p>
+
+<script type="text/javascript">
+    function fun2() {
+        document.getElementsByTagName('p')[0].style.color = "green";
+    } {
+        function fun3() {
+            document.getElementsByTagName('p')[0].style.color = "red";
+        }
+    }
+
+    function build() {
+        let fun = Number(document.forms[0].s.value);
+        if (fun == 1) x2(1366, 768);
+        if (fun == 2) x3(1366, 768);
+        if (fun == 3) sinX(1366, 768);
+        if (fun == 4) cosX(1366, 768);
+
+    }
+
+    function x2(width, height) {
+
+        let str = new String;
+        x0 = width / 2;
+        y0 = height / 2;
+        kx = width / 20;
+        ky = height / 20;
+        for (i = 1; i < width; i = i + 20) str += (" <div style='top: " + y0 + " ; left: " + i + " '>_</div> ");
+        for (i = 1; i < height; i = i + 20) str += (" <div style='left: " + x0 + " ; top: " + i + " '>|</div> ");
+        for (x = -10; x < 10; x = x + 0.001) {
+            y = x * x;
+            str += ("<div style='left:" + (x0 + kx * x) + ";top:" + (y0 - ky * y + 3) + ";'>.</div>");
+        }
+
+        document.getElementsByTagName('p')[0].innerHTML = str;
+    }
+
+
+    function x3(width, height) {
+        let str = new String;
+        x0 = width / 2;
+        y0 = height / 2;
+        kx = width / 20;
+        ky = height / 20;
+        for (i = 1; i < width; i = i + 20) str += (" <div style='top: " + y0 + " ; left: " + i + " '>_</div> ");
+        for (i = 1; i < height; i = i + 20) str += (" <div style='left: " + x0 + " ; top: " + i + " '>|</div> ");
+        for (x = -10; x < 10; x = x + 0.001) {
+            y = x * x * x;
+            str += ("<div style='left:" + (x0 + kx * x) + ";top:" + (y0 - ky * y + 3) + " '>.</div>");
+        }
+
+        document.getElementsByTagName('p')[0].innerHTML = str;
+    }
+
+    function sinX(width, height) {
+        let str = new String;
+        x0 = width / 2;
+        y0 = height / 2;
+        kx = width / 20;
+        ky = height / 20;
+        for (i = 1; i < width; i = i + 20) str += (" <div style='top: " + y0 + " ; left: " + i + " '>_</div> ");
+        for (i = 1; i < height; i = i + 20) str += (" <div style='left: " + x0 + " ; top: " + i + " '>|</div> ");
+        for (x = -10; x < 10; x = x + 0.001) {
+            y = Math.sin(x);
+            str += ("<div style='left:" + (x0 + kx * x) + ";top:" + (y0 - ky * y + 3) + " '>.</div>");
+        }
+        document.getElementsByTagName('p')[0].innerHTML = str;
+    }
+
+    function cosX(width, height) {
+        let str = new String;
+        x0 = width / 2;
+        y0 = height / 2;
+        kx = width / 20;
+        ky = height / 20;
+        for (i = 1; i < width; i = i + 20) str += (" <div style='top: " + y0 + " ; left: " + i + " '>_</div> ");
+        for (i = 1; i < height; i = i + 20) str += (" <div style='left: " + x0 + " ; top: " + i + " '>|</div> ");
+        for (x = -10; x < 10; x = x + 0.001) {
+            y = Math.cos(x);
+            str += ("<div style='left:" + (x0 + kx * x) + ";top:" + (y0 - ky * y + 3) + " '>.</div>");
+        }
+        document.getElementsByTagName('p')[0].innerHTML = str;
+    }
+</script>
+
+</html>

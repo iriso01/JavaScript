@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8 '>
+    <title>Моя первая страница</title>
+    <script>
+        function nom1() {
+            let stroka = new String();
+            for (let i = 0; i < document.all.length; i++) {
+                let child = document.all[i];
+                stroka += ' ' + child.tagName + '-' + i + '  ';
+            }
+            alert(stroka);
+        }
+
+        function nom2() {
+            let stroka1 = new String();
+            for (let i = 0; i < document.body.childNodes.length; i++) {
+                let child1 = document.body.childNodes[i];
+                stroka1 += ' ' + child1.tagName + ' ';
+            }
+            alert(stroka1);
+        }
+
+        function nom3() {
+            let stroka2 = new String();
+            for (let i = 0; i < document.all[30].childNodes.length; i++) {
+                let child2 = document.all[30].childNodes[i];
+                stroka2 += child2.innerHTML;
+            }
+            alert(stroka2);
+
+        }
+
+        function nom3_1() {
+            let stroka3 = new String();
+            for (let i = 0; i < document.getElementsByTagName('span')[0].childNodes.length; i++) {
+                let child3 = document.getElementsByTagName('span')[0].childNodes[i];
+
+                stroka3 += document.getElementsByTagName('span')[0].innerHTML;
+            }
+            alert(stroka3);
+        }
+
+        function nom3_2() {
+            let stroka4 = new String();
+            for (let i = 0; i < document.getElementById('spanid').childNodes.length; i++) {
+                let child4 = document.getElementById('spanid').childNodes[i];
+                stroka4 += document.getElementById('spanid').innerHTML;
+            }
+            alert(stroka4);
+        }
+
+        function nom4() {
+            let pred1 = Number(document.getElementById('fir').innerHTML);
+            let pred2 = Number(document.getElementById('sec').innerHTML);
+            let pred3 = Number(document.getElementById('thr').innerHTML);
+            let pred4 = Number(document.getElementById('fou').innerHTML);
+            let srBall;
+            srBall = (pred1 + pred2 + pred3 + pred4) / 4;
+            document.getElementById('indefik').innerHTML = '«животных-компаньонов». Средний балл= ' + srBall;
+        }
+    </script>
+</head>
+
+<body>
+
+
+    <input type='button' value='1' onclick='nom1()' /><br>
+    <input type='button' value='2' onclick='nom2()' /><br>
+    <input type='button' value='3-1' onclick='nom3()' /><br>
+    <input type='button' value='3-2' onclick='nom3_1()' /><br>
+    <input type='button' value='3-3' onclick='nom3_2()' /><br>
+    <input type='button' value='4' onclick='nom4()' /><br>
+    <h1 align='center '>
+        <font color=green>Домашние животные</h1>
+    </font>
+    <h3 align='center '>
+        <font color=red>Собака</h3>
+
+
+    <Ul type='circle '>
+        <h2>Породы:</h2>
+        <li>Корги</li>
+        <li><a href='лабораторная 1-2.html '>Хаски</a></li>
+        <li>Йоркширский терьер</li>
+    </ul>
+    <p><span style='color:rgb(119, 0, 255) ' id='spanid'> Домашнее животное, одно из наиболее популярных животных-компаньонов.</span> Домашняя собака была описана как самостоятельный биологический вид Линнеем в 1758 году; в настоящее время данное научное
+        название признаётся многими авторитетными организациями, такими как Американское общество маммалогов. Имеется несколько гипотез происхождения собаки, наиболее вероятными ее предками считаются волк и некоторые виды шакалов.
+    </p>
+    <font face='Georgia ' size='2 '>
+        <h3 align='center '>
+            <font color=green>Кошка</h3>
+        <p> Домашнее животное, одно из наиболее популярных <span style='color:brown ' id='indefik'>«животных-компаньонов»</span>.
+
+            <ul type='square '>
+                <h2>Породы:</h2>
+                <li>Британка</li>
+                <li>Вислоухая</li>
+                <li>Мейк-ун</li>
+            </ul>
+
+            С точки зрения научной систематики, домашняя кошка - млекопитающее семейства кошачьих отряда хищных.
+            </font>
+        </p>
+        <font face='Times New Roman ' size='8 '>
+            <h3 align='center '>
+                <font color='blue '>Хорек</h3>
+            <p>Род <span style='color:crimson '>млекопитающих</span> семейства куньих. Кроме собственно хорьков, к этому же роду хищников относятся европейская норка, ласка, горностай и длиннохвостая ласка.
+
+                <ul>
+                    <h2>Породы:</h2>
+                    <li>Хонорик</li>
+                    <li>Фуро</li>
+                    <li>Фретка</li>
+                </ul>
+
+                Три вида, в Евразии и Северной Америке; в России два вида: лесной или тёмный хорь и степной или светлый, хорь.
+                </font>
+            </p>
+            <h2 align='center '>
+                <font color='purple ' size='4 '>Домашние животные сельской местности</h2>
+            <table border="black" align="center" width='1200 ' height='700 '>
+                <tr>
+                    <th>Сельскохозяйственные животные</th>
+                    <th> Коза</th>
+                    <th>Овца</th>
+                    <th>Лошадь</th>
+                </tr>
+                <th>Длительность жизни</th>
+                <td colspan='3 ' <text align='center '>9-12 лет</td>
+                </tr>
+                <tr>
+                    <th>Цвет шерсти</th>
+                    <td colspan='2 ' align='center '>Белый</td>
+                    <td align='center '><a href='лабораторная 1-2.html '>Коричневый,рыжий,черный</a></td>
+                </tr>
+                <tr>
+
+                    <th>Место обитания</th>
+                    <td rowspan="2">Турция,Сирия,Ливан,Греция</td>
+                    <td>Грузия, Новая Зеландия</td>
+                    <td>Северная Америка</td>
+                </tr>
+                <tr>
+                    <th>Место содержания</th>
+                    <td>Грузия</td>
+                    <td>Россия,Франция</td>
+
+                </tr>
+            </table>
+            <h2 align=center>Успеваeмость</h2>
+            <table border="5">
+                <tr>
+                    <td>ОАиП</td>
+                    <td id=fir>8</td>
+                </tr>
+                <tr>
+                    <td>АЛОЦВМ</td>
+                    <td id=sec>6</td>
+                </tr>
+                <tr>
+                    <td>Мат Анализ</td>
+                    <td id=thr>7</td>
+                </tr>
+                <tr>
+                    <td>ЛАиАГ</td>
+                    <td id=fou>8</td>
+                </tr>
+
+            </table>
+</body>
+
+</html>
